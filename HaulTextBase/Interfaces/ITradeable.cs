@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace HaulTextBase.Interfaces
 {
-    internal class ILocation
+    internal class ITradeable
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public List<IInteractable> Interactables { get; set; } = new List<IInteractable>();
-        
+        public float Weight { get; }
     }
 }

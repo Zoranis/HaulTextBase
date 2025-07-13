@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HaulTextBase.Interfaces
+namespace HaulTextBase.Game
 {
-    internal class IInteractable
+    internal class Player
     {
-
+        int Credits { get; set; } = 0;
+        
     }
 }
