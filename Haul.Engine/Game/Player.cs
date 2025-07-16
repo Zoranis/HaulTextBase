@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HaulTextBase.Game
+namespace Haul.Engine.Game
 {
-    internal class Player
+    public class Player
     {
         int Credits { get; set; } = 0;
         
