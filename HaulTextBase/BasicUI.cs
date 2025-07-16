@@ -17,28 +17,33 @@ namespace HaulTextBase
             Response firstResponse = Controller.NewGame();
             currentResponse = firstResponse;
             loop();
+            
         }
 
         private void loop()
         {
-            while(running)
+            while (running)
             {
-                
+                HandleResponse(currentResponse);
+                Request request = new Request(ReceiveUserInput());
+                currentResponse = Controller.HandleRequest(request);
             }
+
         }
 
         private void HandleResponse(Response response)
         {
             ShowMessage(response);
-
+            
         }
 
         private void ShowMessage(Response response)
         {
             Console.WriteLine(response.GameState?.description);
         }
-        private void ReceiveUserInput()
+        private int ReceiveUserInput()
         {
+            int choice = 0;
             Console.WriteLine("Enter your choice:");
 
             ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: true);
@@ -46,17 +51,15 @@ namespace HaulTextBase
 
             if (char.IsDigit(keyChar))
             {
-                int number = int.Parse(keyChar.ToString());
-                Console.WriteLine($"\nYou pressed: {number}");
+                choice = int.Parse(keyChar.ToString());
+                Console.WriteLine($"\nYou pressed: {choice}");
             }
             else
             {
                 Console.WriteLine("\nThat's not a digit.");
             }
 
-            Request request = new Request(input);
-            currentResponse = Controller.HandleRequest(request);
-            HandleResponse(currentResponse);
+            return choice;
         }
     }
 }
