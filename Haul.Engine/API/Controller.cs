@@ -1,4 +1,5 @@
-﻿using HaulTextBase.Game;
+﻿using Haul.Engine.Interfaces;
+using Haul.Engine.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,15 +8,16 @@ using System.Threading.Tasks;
 
 namespace Haul.Engine.API
 {
-    public static class Controller
+    public class Controller(IGameManager gameManager) : IController
     {
-        public static Response NewGame()
+        private IGameManager _gameManager { get; } = gameManager;
+        public Response NewGame()
         {
-            return GameManager.Instance().NewGame();
+            return _gameManager.StartGame();
         }
-        public static Response HandleRequest(Request request)
+        public Response HandleRequest(Request request)
         {
-            return GameManager.Instance().HandleRequest(request);
+            return _gameManager.HandleRequest(request);
         }
     }
 }
