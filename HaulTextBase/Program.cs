@@ -11,6 +11,7 @@ var services = new ServiceCollection();
 
 services.AddScoped<IGameManager, GameManager>();
 services.AddScoped<IController, Controller>();
+services.AddScoped<IInitializer, ClassInitializerService>();
 
 // Register UI services
 services.AddScoped<BasicUI>();
