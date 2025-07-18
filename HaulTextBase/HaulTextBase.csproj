@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Haul.Engine\Haul.Engine.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
 </Project>
