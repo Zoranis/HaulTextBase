@@ -51,7 +51,7 @@ namespace HaulTextBase
 
         private void HandleGameState(GameState? gameState)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Handling GameState...");
         }
 
         private void HandleDescription(Response response)

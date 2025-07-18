@@ -9,6 +9,7 @@ namespace Haul.Engine.API
         public Response(GameState newGameState)
         {
             GameState = newGameState;
+            description = "This is the beginning of the game.";
         }
     }
 }
