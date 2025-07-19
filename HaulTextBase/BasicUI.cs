@@ -12,16 +12,17 @@ namespace HaulTextBase
 {
     public class BasicUI
     {
-        private readonly IController _Controller;
-        bool running = true;
-        Response? currentResponse;
+        private readonly IController _controller;
+        private bool running = true;
+        private Response? _currentResponse;
+        private List<string> _output = new();
 
         public BasicUI(IController Controller)
         {
             Console.WriteLine("Initializing Basic UI...");
-            _Controller = Controller;
+            _controller = Controller;
             Response firstResponse = Controller.StartGame();
-            currentResponse = firstResponse;
+            _currentResponse = firstResponse;
             loop();
         }
 
@@ -29,17 +30,28 @@ namespace HaulTextBase
         {
             while (running)
             {
-                if (currentResponse == null)
+                if (_currentResponse == null)
                 {
                     Console.WriteLine("No response received. Exiting loop.");
                     break;
                 }
                 
-                HandleResponse(currentResponse);
+                _output.Clear();
+                HandleResponse(_currentResponse);
+                PrintOutput();
                 Request request = new Request(ReceiveUserInput());
-                currentResponse = _Controller.HandleRequest(request);
+                _currentResponse = _controller.HandleRequest(request);
             }
 
+        }
+
+        private void PrintOutput()
+        {
+            Console.Clear();
+            foreach (var line in _output)
+            {
+                Console.WriteLine(line);
+            }
         }
 
         private void HandleResponse(Response response)
@@ -50,12 +62,11 @@ namespace HaulTextBase
 
         private void HandleGameState(GameState? gameState)
         {
-            Console.WriteLine("Handling GameState...");
         }
 
         private void HandleDescription(Response response)
         {
-            Console.WriteLine(response.description.Text["Place"]);
+            _output.Add(response.description.Text["Place"]);
         }
 
         private int ReceiveUserInput()
