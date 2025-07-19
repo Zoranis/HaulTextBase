@@ -12,10 +12,5 @@ namespace HaulTextBase.Models
         public string Description { get; set; }
         public List<IInteractable> Interactables { get; set; } = new List<IInteractable>();
         public List<Item> Items { get; set; } = new List<Item>();
-
-        //public static Place First()
-        //{
-        //    return StaticInitializer.InitializePlace();
-        //}
     }
 }

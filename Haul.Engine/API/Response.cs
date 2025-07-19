@@ -1,15 +1,17 @@
-﻿using HaulTextBase.Game;
+﻿using Haul.Engine.Game;
+using HaulTextBase.Game;
 
 namespace Haul.Engine.API
 {
     public class Response
     {
-        public GameState? GameState { get; set; }
-        public string description { get; set; }
-        public Response(GameState newGameState)
+        public GameState? gameState { get; set; }
+        public Description description { get; set; }
+        public Response(GameState newGameState, Description description)
         {
-            GameState = newGameState;
-            description = "This is the beginning of the game.";
+            this.gameState = newGameState;
+            this.description = description;
         }
+
     }
 }

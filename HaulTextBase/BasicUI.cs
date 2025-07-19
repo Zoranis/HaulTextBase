@@ -20,7 +20,7 @@ namespace HaulTextBase
         {
             _Controller = Controller;
             Console.WriteLine("Initializing Basic UI...");
-            Response firstResponse = Controller.NewGame();
+            Response firstResponse = Controller.StartGame();
             currentResponse = firstResponse;
             loop();
         }
@@ -44,9 +44,8 @@ namespace HaulTextBase
 
         private void HandleResponse(Response response)
         {
-            HandleGameState(response.GameState);
+            HandleGameState(response.gameState);
             HandleDescription(response);
-
         }
 
         private void HandleGameState(GameState? gameState)
@@ -56,7 +55,7 @@ namespace HaulTextBase
 
         private void HandleDescription(Response response)
         {
-            Console.WriteLine(response.description);
+            Console.WriteLine(response.description.Text["Place"]);
         }
 
         private int ReceiveUserInput()

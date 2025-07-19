@@ -12,7 +12,10 @@ namespace Haul.Engine.Places
         public SpacePort()
         {
             Name = "Space Port";
-            Description = "A bustling hub of interstellar travel, where ships come and go at all hours.";
+            // a description of a spaceport that is on a remote planet, with very little traffic,
+            // and obviously poor maintenance.
+            Description = "You find yourself in a spaceport on a remote planet. The place is eerily quiet, with only a few ships docked. The walls are stained with age, and the lights flicker intermittently. It seems like this place hasn't seen much traffic in a long time, and the maintenance is clearly lacking. You can hear the distant hum of machinery, but it feels like you're the only one here.";
+
         }
         
         

@@ -8,10 +8,10 @@ namespace Haul.Engine.API
 {
     public class Request
     {
-        public int _choice { get; set; }
+        public int choice { get; set; }
         public Request(int choice)
         {
-            _choice = choice;
+            this.choice = choice;
         }
     }
 }

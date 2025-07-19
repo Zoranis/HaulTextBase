@@ -1,33 +1,39 @@
 ﻿using Haul.Engine.API;
+using Haul.Engine.Game;
 using Haul.Engine.Interfaces;
 using HaulTextBase.Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Haul.Engine.Services
 {
     public class GameManager : IGameManager
     {
-        
-        public GameState? _gameState;
-
-        public Response StartGame()
+        public Response HandleRequest(Request? request = null, GameState? gameState = null)
         {
-            _gameState = new GameState();
-            return new Response(_gameState);
+            if (request == null)
+                request = new Request(0);
+
+            if (gameState == null)
+            {
+                gameState = new GameState();
+            }
+
+            BuildGameState(request, gameState);
+            var description = BuildDescription(gameState);
+            return new Response(gameState, description);
         }
 
-        public Response HandleRequest(Request request)
+        private Description BuildDescription(GameState gameState)
         {
-            //Change gamestate based on request
-            Response response = new(_gameState!);
-            return response;
+            Description newDescription = new();
+            newDescription.Text["Place"] = gameState.currentPlace.Description;
+            return newDescription;
         }
 
-        
+        private void BuildGameState(Request request, GameState gameState)
+        {
+            if (request.choice == 0)
+                return;
+        }
 
 
     }
