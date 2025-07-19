@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HaulTextBase.Interfaces
+namespace HaulEngine.Interfaces
 {
-    internal class ITradeable
+    internal interface ITradeable
     {
         public string Name { get; set; }
         public string Description { get; set; }
