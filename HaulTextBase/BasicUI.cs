@@ -56,7 +56,6 @@ namespace HaulTextBase
         private void HandleDescription(Response response)
         {
             Console.WriteLine(response.description.Text["Place"]);
-            Console.WriteLine(response.description.Text["Debug"]);
         }
 
         private int ReceiveUserInput()

@@ -28,7 +28,6 @@ namespace Haul.Engine.Game
         {
             Description newDescription = new();
             newDescription.Text["Place"] = CurrentGameState.currentPlace.Description;
-            newDescription.Text["Debug"] = $"Counter: {CurrentGameState.counter++}";
             return newDescription;
         }
 
