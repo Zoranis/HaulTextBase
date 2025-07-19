@@ -17,7 +17,7 @@ namespace Haul.Engine.Game
         public Response HandleRequest(Request? request = null)
         {
             if (request == null)
-                request = new Request(0);
+                request = new Request();
 
             BuildGameState(request);
             var description = BuildDescription();
@@ -33,7 +33,7 @@ namespace Haul.Engine.Game
 
         private void BuildGameState(Request request)
         {
-            if (request.choice == 0)
+            if (request.Choice == 0)
                 return;
         }
 

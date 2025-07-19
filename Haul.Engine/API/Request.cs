@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Haul.Engine.API
 {
-    public class Request
+    public class Request(int choice = 0)
     {
-        public int choice { get; set; }
-        public Request(int choice)
-        {
-            this.choice = choice;
-        }
+        public int Choice { get; set; } = choice;
     }
 }
