@@ -8,6 +8,7 @@ namespace HaulTextBase.Game
     {
         public Player player;
         public Place currentPlace;
+        public int counter = 0;
 
 
         public GameState()

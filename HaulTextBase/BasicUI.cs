@@ -18,8 +18,8 @@ namespace HaulTextBase
 
         public BasicUI(IController Controller)
         {
-            _Controller = Controller;
             Console.WriteLine("Initializing Basic UI...");
+            _Controller = Controller;
             Response firstResponse = Controller.StartGame();
             currentResponse = firstResponse;
             loop();
@@ -34,8 +34,8 @@ namespace HaulTextBase
                     Console.WriteLine("No response received. Exiting loop.");
                     break;
                 }
+                
                 HandleResponse(currentResponse);
-
                 Request request = new Request(ReceiveUserInput());
                 currentResponse = _Controller.HandleRequest(request);
             }
@@ -56,6 +56,7 @@ namespace HaulTextBase
         private void HandleDescription(Response response)
         {
             Console.WriteLine(response.description.Text["Place"]);
+            Console.WriteLine(response.description.Text["Debug"]);
         }
 
         private int ReceiveUserInput()
