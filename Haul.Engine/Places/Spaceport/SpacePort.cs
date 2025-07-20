@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Haul.Engine.Places
+namespace Haul.Engine.Places.Spaceport
 {
     internal class SpacePort : Place
     {

@@ -16,6 +16,7 @@ namespace HaulTextBase
         private bool running = true;
         private Response? _currentResponse;
         private List<string> _output = new();
+        private int lastChoice = 0;
 
         public BasicUI(IController Controller)
         {
@@ -35,7 +36,7 @@ namespace HaulTextBase
                     Console.WriteLine("No response received. Exiting loop.");
                     break;
                 }
-                
+
                 _output.Clear();
                 HandleResponse(_currentResponse);
                 PrintOutput();
@@ -67,6 +68,7 @@ namespace HaulTextBase
         private void HandleDescription(Response response)
         {
             _output.Add(response.description.Text["Place"]);
+            _output.Add($"Last choice: {lastChoice}");
         }
 
         private int ReceiveUserInput()
@@ -86,7 +88,7 @@ namespace HaulTextBase
             {
                 Console.WriteLine("\nThat's not a digit.");
             }
-
+            lastChoice = choice;
             return choice;
         }
     }
