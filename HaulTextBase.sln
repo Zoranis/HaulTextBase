@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaulTextBase", "HaulTextBas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haul.Engine", "Haul.Engine\Haul.Engine.csproj", "{C5F5984F-016B-4972-9288-304965800993}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hauler.Persistence", "Hauler.Persistence\Hauler.Persistence.csproj", "{6963C608-3187-401D-BA78-ABDA1A8BF809}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C5F5984F-016B-4972-9288-304965800993}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5F5984F-016B-4972-9288-304965800993}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5F5984F-016B-4972-9288-304965800993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6963C608-3187-401D-BA78-ABDA1A8BF809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6963C608-3187-401D-BA78-ABDA1A8BF809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6963C608-3187-401D-BA78-ABDA1A8BF809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6963C608-3187-401D-BA78-ABDA1A8BF809}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

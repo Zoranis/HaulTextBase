@@ -1,5 +1,5 @@
 ﻿using Haul.Engine.Game;
-using Haul.Engine.Places;
+using Haul.Engine.Places.Spaceport;
 using HaulTextBase.Models;
 
 namespace HaulTextBase.Game
