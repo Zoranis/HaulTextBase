@@ -1,7 +1,6 @@
-﻿using Haul.Engine.Interfaces;
-using Haul.Engine.Models;
+﻿using Haul.Contracts.Interfaces;
 
-namespace HaulTextBase.Models
+namespace Haul.Contracts.Models
 {
     public class Place
     {

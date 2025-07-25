@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HaulTextBase.Models
+﻿namespace Haul.Contracts.Models
 {
-    internal class Vehicle
+    public class Vehicle
     {
         public string Name { get; set; }
         public float HullCondition { get; set; } = 100.0f;

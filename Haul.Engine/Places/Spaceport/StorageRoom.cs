@@ -1,4 +1,4 @@
-﻿using HaulTextBase.Models;
+﻿using Haul.Contracts.Models;
 
 namespace Haul.Engine.Places.Spaceport
 {

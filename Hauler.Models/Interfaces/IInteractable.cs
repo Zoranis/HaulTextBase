@@ -1,4 +1,4 @@
-﻿namespace Haul.Engine.Interfaces
+﻿namespace Haul.Contracts.Interfaces
 {
     public interface IInteractable
     {

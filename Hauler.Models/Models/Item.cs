@@ -1,4 +1,4 @@
-﻿namespace Haul.Engine.Models
+﻿namespace Haul.Contracts.Models
 {
     public class Item
     {

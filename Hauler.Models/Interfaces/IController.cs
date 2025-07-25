@@ -1,6 +1,6 @@
 ﻿using Haul.Engine.API;
 
-namespace Haul.Engine.Interfaces
+namespace Haul.Contracts.Interfaces
 {
     public interface IController
     {

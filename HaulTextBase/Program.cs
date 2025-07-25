@@ -1,6 +1,6 @@
-﻿using Haul.Engine.API;
+﻿using Haul.Contracts.Interfaces;
+using Haul.Engine.API;
 using Haul.Engine.Game;
-using Haul.Engine.Interfaces;
 using HaulTextBase;
 using Microsoft.Extensions.DependencyInjection;
 

@@ -6,13 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="API\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Hauler.Models\Hauler.Contracts.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,4 +1,4 @@
-﻿using Haul.Engine.Interfaces;
+﻿using Haul.Contracts.Interfaces;
 
 namespace Haul.Engine.API
 {

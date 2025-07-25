@@ -1,7 +1,6 @@
 ﻿using Haul.Engine.API;
-using HaulTextBase.Game;
 
-namespace Haul.Engine.Interfaces
+namespace Haul.Contracts.Interfaces
 {
     public interface IGameManager
     {

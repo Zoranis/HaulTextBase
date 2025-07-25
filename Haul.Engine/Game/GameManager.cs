@@ -1,6 +1,5 @@
-﻿using Haul.Engine.API;
-using Haul.Engine.Game;
-using Haul.Engine.Interfaces;
+﻿using Haul.Contracts.Interfaces;
+using Haul.Engine.API;
 using HaulTextBase.Game;
 
 namespace Haul.Engine.Game

@@ -7,12 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="API\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Hauler.Models\Hauler.Contracts.csproj" />
+    <PackageReference Include="LiteDB" Version="5.0.21" />
   </ItemGroup>
 
 </Project>

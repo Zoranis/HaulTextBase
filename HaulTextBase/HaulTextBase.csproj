@@ -8,13 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LiteDB" Version="5.0.21" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.7" />
     <PackageReference Include="Spectre.Console" Version="0.50.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Haul.Engine\Haul.Engine.csproj" />
+    <ProjectReference Include="..\Hauler.Models\Hauler.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>

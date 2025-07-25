@@ -1,6 +1,5 @@
-﻿using Haul.Engine.Game;
-using Haul.Engine.Places;
-using HaulTextBase.Models;
+﻿using Haul.Contracts.Models;
+using Haul.Engine.Game;
 
 namespace HaulTextBase.Game
 {
@@ -12,8 +11,8 @@ namespace HaulTextBase.Game
 
         public GameState()
         {
-            currentPlace = new SpacePort();
             player = new Player();
+            currentPlace = new Place(); // Implement when persistence layer is ready
         }
     }
 }
