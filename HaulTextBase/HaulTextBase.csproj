@@ -17,8 +17,4 @@
     <ProjectReference Include="..\Hauler.Models\Hauler.Contracts.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
 </Project>
