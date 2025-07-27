@@ -11,8 +11,6 @@ namespace HaulTextBase.Game
 
         public GameState()
         {
-            player = new Player();
-            currentPlace = new Location(); // Implement when persistence layer is ready
         }
     }
 }
