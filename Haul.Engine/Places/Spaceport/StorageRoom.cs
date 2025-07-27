@@ -2,7 +2,7 @@
 
 namespace Haul.Engine.Places.Spaceport
 {
-    internal class StorageRoom : Place
+    internal class StorageRoom : Location
     {
     }
 }

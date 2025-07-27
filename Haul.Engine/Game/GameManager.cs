@@ -1,16 +1,21 @@
 ﻿using Haul.Contracts.Interfaces;
 using Haul.Engine.API;
+using Haul.Persistence;
 using HaulTextBase.Game;
 
 namespace Haul.Engine.Game
 {
     public class GameManager : IGameManager
     {
+        
+
         public GameState CurrentGameState;
 
         public GameManager()
         {
             CurrentGameState = new();
+            var ps = new PersistenceService();
+            ps.init();
         }
 
         public Response HandleRequest(Request? request = null)

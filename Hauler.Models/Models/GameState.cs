@@ -6,13 +6,13 @@ namespace HaulTextBase.Game
     public class GameState
     {
         public Player player;
-        public Place currentPlace;
+        public Location currentPlace;
 
 
         public GameState()
         {
             player = new Player();
-            currentPlace = new Place(); // Implement when persistence layer is ready
+            currentPlace = new Location(); // Implement when persistence layer is ready
         }
     }
 }

@@ -3,9 +3,10 @@ using Haul.Engine.API;
 using Haul.Engine.Game;
 using HaulTextBase;
 using Microsoft.Extensions.DependencyInjection;
+using System.Diagnostics;
 
 // add IController to the DI container
-
+Debug.WriteLine("Setting up dependency injection...");
 var services = new ServiceCollection();
 
 
