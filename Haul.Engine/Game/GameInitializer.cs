@@ -12,7 +12,7 @@ namespace Haul.Engine.Game
         public GameState InitGameState()
         {
             GameState gameState = new GameState();
-
+            return gameState;
         }
     }
 }
