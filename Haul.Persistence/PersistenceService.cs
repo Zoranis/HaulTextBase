@@ -1,6 +1,7 @@
 ﻿using Haul.Contracts.Interfaces;
 using Haul.Contracts.Models;
 using Hauler.Contracts.Models;
+using HaulTextBase.Game;
 using LiteDB;
 using System.Diagnostics;
 
@@ -8,6 +9,7 @@ namespace Haul.Persistence
 {
     public class PersistenceService
     {
+        private ILiteDatabase _liteDatabase;
         public void init()
         {
             // create a string that refers to the folder where the app is installed
@@ -15,29 +17,37 @@ namespace Haul.Persistence
             path += "\\Haul.db";
             //write path to output console
             Debug.WriteLine($"Database path: {path}");
-            using (var db = new LiteDatabase(path))
+            using (_liteDatabase = new LiteDatabase(path))
             {
-                var col = db.GetCollection<Location>("Locations");
+                // Initialize the database and create collections if they do not exist
+            }
+        }
 
-                Location Location = new()
-                {
-                    Name = "Test Location",
-                    Title = "Test Location Title",
-                    Description = "This is a test location for the Haul application.",
-                    Interactables = new List<Interactable>
-                    {
-                        new Interactable(), // Add interactables as needed
-                        new Interactable()
-                    },
-                    Items = new List<Item>
-                    {
-                        new Item { Name = "Test Item 1" },
-                        new Item { Name = "Test Item 2" }
-                    }
-                };
+        public void SaveGame(GameState gameState)
+        {
+            // I'm treating gamestate as a collection, but there should be only one game state.
+            // This might cause me to treat it as an allready implemented multy save capable system.
+            // This will conflict with the fact that the rest of the collecitons represent a single game.
+            // On the other hand, maybe the collections should be static and be relevant for multiple games saved in 
+            // multiple documents in the gamestate collection.
+            var games = _liteDatabase.GetCollection<GameState>("gamestate");
+            games.Upsert(gameState);
+        }
 
-                // Insert new customer document (Id will be auto-incremented)
-                col.Insert(Location);
+        public GameState LoadGame()
+        {
+            // Load the game state from the database
+            var games = _liteDatabase.GetCollection<GameState>("gamestate");
+            var gameState = games.FindOne(x => true); // Assuming there's only one game state
+            if (gameState != null)
+            {
+                // Do something with the loaded game state, e.g., return it or set it in the game manager
+                Debug.WriteLine("Game state loaded successfully.");
+                return gameState;
+            }
+            else
+            {
+                throw new Exception("No game state found in the database.");
             }
         }
     }
