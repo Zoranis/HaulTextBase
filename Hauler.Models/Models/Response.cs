@@ -6,12 +6,10 @@ namespace Haul.Engine.API
 {
     public class Response
     {
-        public GameState? gameState { get; set; }
-        public Description description { get; set; }
-        public Response(GameState newGameState, Description description)
+        public GameState gameState { get; set; }
+        public Response(GameState newGameState)
         {
             this.gameState = newGameState;
-            this.description = description;
         }
 
     }

@@ -60,7 +60,7 @@ namespace HaulTextBase
 
         private void HandleDescription(Response response)
         {
-            _output.Add(response.description.Text["Place"]);
+            _output.Add(response.gameState.currentPlace.Description);
             _output.Add($"Last choice: {lastChoice}");
         }
 

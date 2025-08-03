@@ -17,28 +17,19 @@ namespace Haul.Engine.Game
         public Response StartGame()
         {
             CurrentGameState = GameInitializer.InitializeGamestate();
-            return HandleRequest();
+            return new Response(CurrentGameState);
         }
 
-        public Response HandleRequest(Request? request = null)
+        public Response HandleRequest(Request request)
         {
-            var description = BuildDescription();
-            return new Response(CurrentGameState, description);
+            if (CurrentGameState == null)
+            {
+                throw new InvalidOperationException("Game state is not initialized. Start or load a game.");
+            }
+
+            // Process the request and update the game state
+
+            return new Response(CurrentGameState);
         }
-
-        private Description BuildDescription()
-        {
-            Description newDescription = new();
-            newDescription.Text["Place"] = CurrentGameState.currentPlace.Description;
-            return newDescription;
-        }
-
-        private void BuildGameState(Request request)
-        {
-            if (request.Choice == 0)
-                return;
-        }
-
-
     }
 }
