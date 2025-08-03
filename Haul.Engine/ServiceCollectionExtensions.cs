@@ -1,5 +1,4 @@
-﻿using Haul.Engine.Services;
-using Haul.Persistence;
+﻿using Haul.Persistence;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Haul.Engine
@@ -8,7 +7,7 @@ namespace Haul.Engine
     {
         public static IServiceCollection AddEngineServices(this IServiceCollection services)
         {
-            services.AddScoped<IPersistenceService, LiteDbPersistenceService>();
+            services.AddPersistenceServices();
             return services;
         }
     }

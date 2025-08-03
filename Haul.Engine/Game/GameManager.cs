@@ -7,23 +7,21 @@ namespace Haul.Engine.Game
 {
     public class GameManager : IGameManager
     {
-        
-
-        public GameState CurrentGameState;
+        public GameState? CurrentGameState;
 
         public GameManager()
         {
-            CurrentGameState = new();
             var ps = new PersistenceService();
-            ps.init();
+        }
+
+        public Response StartGame()
+        {
+            CurrentGameState = GameInitializer.InitializeGamestate();
+            return HandleRequest();
         }
 
         public Response HandleRequest(Request? request = null)
         {
-            if (request == null)
-                request = new Request();
-
-            BuildGameState(request);
             var description = BuildDescription();
             return new Response(CurrentGameState, description);
         }

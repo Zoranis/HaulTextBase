@@ -1,20 +1,20 @@
-﻿using Haul.Contracts.Interfaces;
-using Haul.Contracts.Models;
-using Hauler.Contracts.Models;
-using HaulTextBase.Game;
+﻿using HaulTextBase.Game;
 using LiteDB;
 using System.Diagnostics;
 
 namespace Haul.Persistence
 {
-    public class PersistenceService
+    public class PersistenceService : IPersistenceService
     {
-        private ILiteDatabase _liteDatabase;
-        public void init()
+        private LiteDatabase _liteDatabase;
+
+        public PersistenceService()
         {
+            
             // create a string that refers to the folder where the app is installed
             var path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             path += "\\Haul.db";
+            File.Delete(path); // Delete the file if it exists to start fresh
             //write path to output console
             Debug.WriteLine($"Database path: {path}");
             using (_liteDatabase = new LiteDatabase(path))
@@ -22,14 +22,8 @@ namespace Haul.Persistence
                 // Initialize the database and create collections if they do not exist
             }
         }
-
         public void SaveGame(GameState gameState)
         {
-            // I'm treating gamestate as a collection, but there should be only one game state.
-            // This might cause me to treat it as an allready implemented multy save capable system.
-            // This will conflict with the fact that the rest of the collecitons represent a single game.
-            // On the other hand, maybe the collections should be static and be relevant for multiple games saved in 
-            // multiple documents in the gamestate collection.
             var games = _liteDatabase.GetCollection<GameState>("gamestate");
             games.Upsert(gameState);
         }
@@ -50,5 +44,7 @@ namespace Haul.Persistence
                 throw new Exception("No game state found in the database.");
             }
         }
+
+
     }
 }

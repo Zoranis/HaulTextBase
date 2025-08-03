@@ -7,9 +7,9 @@ namespace Haul.Engine.API
         private IGameManager _gameManager { get; } = gameManager;
         public Response StartGame()
         {
-            return _gameManager.HandleRequest();
+            return _gameManager.StartGame();
         }
-        public Response HandleRequest(Request request)
+        public Response HandleRequest(Request? request)
         {
             return _gameManager.HandleRequest(request);
         }

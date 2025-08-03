@@ -16,8 +16,7 @@ namespace HaulTextBase
         {
             Console.WriteLine("Initializing Basic UI...");
             _controller = Controller;
-            Response firstResponse = Controller.StartGame();
-            _currentResponse = firstResponse;
+            _currentResponse = Controller.StartGame();
             loop();
         }
 

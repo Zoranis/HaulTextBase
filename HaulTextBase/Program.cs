@@ -2,6 +2,7 @@
 using Haul.Engine;
 using Haul.Engine.API;
 using Haul.Engine.Game;
+using Haul.Persistence;
 using HaulTextBase;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,7 +20,6 @@ services.AddScoped<BasicUI>();
 services.AddEngineServices();
 
 var serviceProvider = services.BuildServiceProvider();
-
 // Start the application
 var ui = serviceProvider.GetRequiredService<BasicUI>();
 

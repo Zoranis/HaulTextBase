@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace Haul.Engine.Game
 {
-    internal class GameInitializer
+    internal static class GameInitializer
     {
-        public GameState InitGameState()
+        public static GameState InitializeGamestate()
         {
+            // Initialize the game state
             GameState gameState = new GameState();
+            
             return gameState;
         }
     }
