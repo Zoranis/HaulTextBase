@@ -5,14 +5,11 @@ using HaulTextBase.Game;
 
 namespace Haul.Engine.Game
 {
-    public class GameManager : IGameManager
+    public class GameManager(IPersistenceService persistenceService) : IGameManager
     {
-        public GameState? CurrentGameState;
+        private readonly IPersistenceService _persistenceService = persistenceService;
+        public GameState? CurrentGameState { get; set; }
 
-        public GameManager()
-        {
-            var ps = new PersistenceService();
-        }
 
         public Response StartGame()
         {
@@ -30,6 +27,20 @@ namespace Haul.Engine.Game
             // Process the request and update the game state
 
             return new Response(CurrentGameState);
+        }
+
+        public void SaveGame()
+        {
+            if (CurrentGameState == null) {
+                throw new InvalidOperationException("Game state is not initialized. Cannot save.");
+            }
+
+            _persistenceService.SaveGame(CurrentGameState);
+        }
+
+        public void LoadGame()
+        {
+           CurrentGameState = _persistenceService.LoadGame();
         }
     }
 }
