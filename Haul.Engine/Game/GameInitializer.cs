@@ -13,7 +13,12 @@ namespace Haul.Engine.Game
         {
             // Initialize the game state
             GameState gameState = new GameState();
-            
+
+            gameState.player = new()
+            {
+                Credits = 1000, // Starting credits
+            };
+
             return gameState;
         }
     }

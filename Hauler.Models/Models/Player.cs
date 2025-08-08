@@ -8,7 +8,7 @@ namespace Haul.Engine.Game
 {
     public class Player
     {
-        int Credits { get; set; } = 0;
+        public int Credits { get; set; } = 0;
         
     }
 }
