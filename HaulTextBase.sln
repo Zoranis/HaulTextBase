@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haul.Engine", "Haul.Engine\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haul.Persistence", "Haul.Persistence\Haul.Persistence.csproj", "{4CB8B353-52DF-4BC8-B62E-6B59BA1FF80F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hauler.Contracts", "Hauler.Models\Hauler.Contracts.csproj", "{E72AF198-0841-40B6-AA6F-4E378138655D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haul.Contracts", "Hauler.Models\Haul.Contracts.csproj", "{E72AF198-0841-40B6-AA6F-4E378138655D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

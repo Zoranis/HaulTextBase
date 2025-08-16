@@ -1,0 +1,28 @@
+{
+  "Locations": {
+    "Terminal": {
+      "Title": "Starport Terminal Hall",
+      "Description": "The main hall of the starport stands mostly silent, save for a small knot of weary passengers slumped on cracked benches, guarding their meager luggage. Dust swirls through the sunbeams from broken skylights, settling on rusted fixtures. Outside the grimy windows, a lone battered freighter bakes in the desert heat, its crew lazily unloading in the shimmer of the landing pad.",
+      "Exits": {
+        "ExitToStorage": {
+          "Title": "Storage Room",
+          "Description": "A rusty metal door leading to the storage area.",
+          "Destination": "StorageRoom"
+        }
+      }
+
+    },
+    "StorageRoom": {
+      "Title": "Starport Storage Room",
+      "Description": "A dim, cramped room with a flickering light, rusted lockers, and dust-covered crates. Damp stains streak the walls; the air smells of stale metal.",
+      "Exits": {
+        "ExitToTerminal": {
+          "Title": "Storage Room",
+          "Description": "A rusty metal door leading back to the terminal hall.",
+          "Destination": "StorageRoom"
+        }
+      }
+
+    }
+  }
+}

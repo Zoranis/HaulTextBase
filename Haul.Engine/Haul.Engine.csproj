@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Haul.Persistence\Haul.Persistence.csproj" />
-    <ProjectReference Include="..\Hauler.Models\Hauler.Contracts.csproj" />
+    <ProjectReference Include="..\Hauler.Models\Haul.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

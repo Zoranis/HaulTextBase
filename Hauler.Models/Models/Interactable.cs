@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hauler.Contracts.Models
+namespace Haul.Contracts.Models
 {
     public class Interactable : IInteractable
     {

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hauler.Contracts.Models
+namespace Haul.Contracts.Models
 {
-    internal class Exit
+    public class Exit
     {
         public Location Destination { get; set; }
         public string Description { get; set; }
