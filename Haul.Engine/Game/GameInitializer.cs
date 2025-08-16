@@ -24,6 +24,7 @@ namespace Haul.Engine.Game
 
         private void InitializeLocations()
         {
+            // Phase 1: Create locations without cross-references
             _locationsDictionary = new Dictionary<string, Location>
             {
                 {
@@ -34,17 +35,7 @@ namespace Haul.Engine.Game
                         Description = "The main hall of the starport stands mostly silent, save for a small knot of weary passengers slumped on cracked benches, guarding their meager luggage. Dust swirls through the sunbeams from broken skylights, settling on rusted fixtures. Outside the grimy windows, a lone battered freighter bakes in the desert heat, its crew lazily unloading in the shimmer of the landing pad.",
                         Interactables = {},
                         ItemKeys = {},
-                        Exits = new List<Exit>
-                        {
-                            {
-                                new Exit()
-                                {
-                                    Name = "StarportStorage",
-                                    Description = "The exit to the spaceport leads out into the bustling streets of the city.",
-                                    Destination = _locationsDictionary["StarportStorage"]
-                                }
-                            }
-                        }
+                        Exits = new List<Exit>()
                     }
                 },
                 {
@@ -55,20 +46,25 @@ namespace Haul.Engine.Game
                         Description = "A dim, cramped room with a flickering light, rusted lockers, and dust-covered crates. Damp stains streak the walls; the air smells of stale metal.",
                         Interactables = {},
                         ItemKeys = {},
-                        Exits = new List<Exit>
-                        {
-                            {
-                                new Exit()
-                                {
-                                    Name = "StarportTerminal",
-                                    Description = "A rusty metal door leading back to the terminal hall, that somehow sounds as silent as this storage room.",
-                                    Destination = _locationsDictionary["StarportTerminal"]
-                                }
-                            }
-                        }
+                        Exits = new List<Exit>()
                     }
                 }
             };
+
+            // Phase 2: Add exits with proper references
+            _locationsDictionary["StarportTerminal"].Exits.Add(new Exit()
+            {
+                Name = "StarportStorage",
+                Description = "The exit to the spaceport leads out into the bustling streets of the city.",
+                Destination = _locationsDictionary["StarportStorage"]
+            });
+
+            _locationsDictionary["StarportStorage"].Exits.Add(new Exit()
+            {
+                Name = "StarportTerminal",
+                Description = "A rusty metal door leading back to the terminal hall, that somehow sounds as silent as this storage room.",
+                Destination = _locationsDictionary["StarportTerminal"]
+            });
         }
     }
 }
