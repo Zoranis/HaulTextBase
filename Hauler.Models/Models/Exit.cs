@@ -13,12 +13,6 @@ namespace Haul.Contracts.Models
         public string Description { get; set; }
         public string Name { get; set; }
         public bool IsLocked { get; set; }
-        public Exit(Location destination, string description, string name, bool isLocked = false)
-        {
-            Destination = destination;
-            Description = description;
-            Name = name;
-            IsLocked = isLocked;
-        }
+       
     }
 }

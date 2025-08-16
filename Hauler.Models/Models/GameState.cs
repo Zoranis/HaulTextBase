@@ -6,11 +6,8 @@ namespace HaulTextBase.Game
     public class GameState
     {
         public Player player;
+        public Dictionary<string, Location> Locations;
         public Location currentPlace;
-
-
-        public GameState()
-        {
-        }
+       
     }
 }

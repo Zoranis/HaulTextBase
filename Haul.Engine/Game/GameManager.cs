@@ -13,8 +13,9 @@ namespace Haul.Engine.Game
 
         public Response StartGame()
         {
-            CurrentGameState = GameInitializer.InitializeGamestate();
-            return new Response(CurrentGameState);
+            //GameInitializer gameInitializer = new GameInitializer();
+            //CurrentGameState = GameInitializer.InitializeGamestate();
+            return new Response(new GameInitializer().InitializeGamestate());
         }
 
         public Response HandleRequest(Request request)

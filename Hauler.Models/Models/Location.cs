@@ -5,11 +5,10 @@ namespace Haul.Contracts.Models
 {
     public class Location
     {
-        public string Name { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public Dictionary<string, Interactable> Interactables { get; set; } = new Dictionary<string, Interactable>();
-        public Dictionary<string, Item> Items { get; set; } = new Dictionary<string, Item>();
-        public Dictionary<string, Exit> Exits { get; set; } = new Dictionary<string, Exit>();
+        public List<string> ItemKeys { get; set; }
+        public List<Exit> Exits { get; set; }
     }
 }
