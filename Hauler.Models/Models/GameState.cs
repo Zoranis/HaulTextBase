@@ -6,8 +6,10 @@ namespace HaulTextBase.Game
     public class GameState
     {
         public Player player;
+        public Location CurrentLocation = new();
         public Dictionary<string, Location> Locations;
-        public Location currentPlace;
+        public static Location currentPlace;
+        public Dictionary<int, Choice> Choices = new();
        
     }
 }

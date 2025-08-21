@@ -9,7 +9,7 @@ namespace Haul.Contracts.Models
 {
     public class Exit
     {
-        public Location Destination { get; set; }
+        public string Destination { get; set; }
         public string Description { get; set; }
         public string Name { get; set; }
         public bool IsLocked { get; set; }

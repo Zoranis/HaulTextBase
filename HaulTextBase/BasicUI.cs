@@ -54,13 +54,17 @@ namespace HaulTextBase
             HandleDescription(response);
         }
 
-        private void HandleGameState(GameState? gameState)
+        private void HandleGameState(GameState gameState)
         {
+            foreach (int choiceIndex in gameState.Choices.Keys)
+            {
+                _output.Add($"{choiceIndex} : {gameState.Choices[choiceIndex].Description}");
+            }
         }
 
         private void HandleDescription(Response response)
         {
-            _output.Add(response.gameState.currentPlace.Description);
+            //_output.Add(response.gameState.currentPlace.Description);
             _output.Add($"Last choice: {lastChoice}");
         }
 

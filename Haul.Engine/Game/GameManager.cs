@@ -1,4 +1,5 @@
 ﻿using Haul.Contracts.Interfaces;
+using Haul.Contracts.Models;
 using Haul.Engine.API;
 using Haul.Persistence;
 using HaulTextBase.Game;
@@ -21,11 +22,6 @@ namespace Haul.Engine.Game
 
         public Response HandleRequest(Request request)
         {
-            if (CurrentGameState == null)
-            {
-                throw new InvalidOperationException("Game state is not initialized. Start or load a game.");
-            }
-
             // Process the request and update the game state
 
             return new Response(CurrentGameState);
@@ -33,7 +29,8 @@ namespace Haul.Engine.Game
 
         public void SaveGame()
         {
-            if (CurrentGameState == null) {
+            if (CurrentGameState == null)
+            {
                 throw new InvalidOperationException("Game state is not initialized. Cannot save.");
             }
 
@@ -42,7 +39,7 @@ namespace Haul.Engine.Game
 
         public void LoadGame()
         {
-           CurrentGameState = _persistenceService.LoadGame();
+            CurrentGameState = _persistenceService.LoadGame();
         }
     }
 }
