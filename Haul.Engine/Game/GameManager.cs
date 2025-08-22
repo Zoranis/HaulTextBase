@@ -23,7 +23,8 @@ namespace Haul.Engine.Game
         public Response HandleRequest(Request request)
         {
             // Process the request and update the game state
-
+            CurrentGameState.Choices[request.Choice]?.Action.Invoke();
+            CurrentGameState.ClearChoices();
             return new Response(CurrentGameState);
         }
 

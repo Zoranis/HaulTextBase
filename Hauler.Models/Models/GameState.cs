@@ -10,6 +10,11 @@ namespace HaulTextBase.Game
         public Dictionary<string, Location> Locations;
         public static Location currentPlace;
         public Dictionary<int, Choice> Choices = new();
-       
+     
+        public void ClearChoices()
+        {
+            Choices.Clear();
+        }
+
     }
 }
