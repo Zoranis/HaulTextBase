@@ -9,8 +9,7 @@ namespace Haul.Engine.Game
     public class GameManager(IPersistenceService persistenceService) : IGameManager
     {
         private readonly IPersistenceService _persistenceService = persistenceService;
-        public GameState? CurrentGameState { get; set; }
-
+        public GameState CurrentGameState { get; set; } = new();
 
         public Response StartGame()
         {

@@ -34,7 +34,7 @@ namespace HaulTextBase
                 HandleResponse(_currentResponse);
                 PrintOutput();
                 Request request = new Request(ReceiveUserInput());
-                _currentResponse = _controller.HandleRequest(request);
+                _currentResponse = _controller.PostRequest(request);
             }
 
         }

@@ -9,7 +9,7 @@ namespace Haul.Engine.API
         {
             return _gameManager.StartGame();
         }
-        public Response HandleRequest(Request? request)
+        public Response PostRequest(Request request)
         {
             return _gameManager.HandleRequest(request);
         }

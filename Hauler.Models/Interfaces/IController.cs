@@ -4,7 +4,7 @@ namespace Haul.Contracts.Interfaces
 {
     public interface IController
     {
-        Response HandleRequest(Request request);
+        Response PostRequest(Request request);
         Response StartGame();
     }
 }
