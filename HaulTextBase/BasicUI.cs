@@ -50,20 +50,23 @@ namespace HaulTextBase
 
         private void HandleResponse(Response response)
         {
-            HandleGameState(response.gameState);
             HandleDescription(response);
         }
 
-        private void HandleGameState(GameState gameState)
+        
+
+        private void HandleDescription(Response response)
         {
+            GameState gameState = response.gameState;
+            
+            _output.Add($"Location: {gameState.CurrentLocation.Title}");
+            
+            _output.Add(gameState.CurrentLocation.Description);
+            
             foreach (int choiceIndex in gameState.Choices.Keys)
             {
                 _output.Add($"{choiceIndex} : {gameState.Choices[choiceIndex].Description}");
             }
-        }
-
-        private void HandleDescription(Response response)
-        {
             //_output.Add(response.gameState.currentPlace.Description);
             _output.Add($"Last choice: {lastChoice}");
         }
