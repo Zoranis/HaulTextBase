@@ -9,5 +9,16 @@ namespace Haul.Contracts.Models
 {
     public class Interactable : IInteractable
     {
+        public bool IsActive { get; set; } = false;
+
+        public void Disengage()
+        {
+            IsActive = false;
+        }
+
+        public void Engage()
+        {
+            IsActive = true;
+        }
     }
 }

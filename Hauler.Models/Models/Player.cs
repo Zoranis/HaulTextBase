@@ -11,6 +11,8 @@ namespace Haul.Engine.Game
     public class Player
     {
         public int Credits { get; set; } = 0;
-        
+
+        public Vehicle? Vehicle { get; set; }
+
     }
 }

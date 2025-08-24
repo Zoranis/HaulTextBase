@@ -2,5 +2,7 @@
 {
     public interface IInteractable
     {
+        void Engage();
+        void Disengage();
     }
 }
