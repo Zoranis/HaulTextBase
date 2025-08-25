@@ -1,6 +1,6 @@
 ﻿using Haul.Contracts.Interfaces;
-using Haul.Contracts.Models;
 using Haul.Engine.API;
+using Haul.Engine.Game.Initializers;
 using Haul.Persistence;
 using HaulTextBase.Game;
 
