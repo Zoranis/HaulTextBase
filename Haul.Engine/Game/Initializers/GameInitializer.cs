@@ -13,45 +13,29 @@ namespace Haul.Engine.Game.Initializers
         {
             _gameState = new GameState
             {
-                player = new Player(),
-                //currentPlace = _locationsDictionary["StarportTerminal"]
+                player = new Player()
+                {
+                    Vehicle = new Vehicle()
+                    {
+                        CargoCapacity = 100,
+                        MaxFuel = 100,
+                        Fuel = 100,
+                        HullHealth = 100,
+                        Name = "Rustbucket",
+                    },
+                },
+                
             };
 
-            InitializeLocations();
+            InitializeExternals();
             _gameState.CurrentLocation = _gameState.Locations["StarportTerminal"];
             return _gameState;
         }
 
-        private void InitializeLocations()
+        private void InitializeExternals()
         {
             LocationsInitializer.AddLocations(_gameState!);
             ExitsInitializer.AddExits(_gameState!);
-
-
-
-            //// Phase 2: Add exits with proper references
-            //_locationsDictionary["StarportTerminal"].Exits.Add(new Exit()
-            //{
-            //    Name = "StarportStorage",
-            //    Description = "The exit to the spaceport leads out into the bustling streets of the city.",
-            //    Destination = _locationsDictionary["StarportStorage"]
-            //});
-
-            //_locationsDictionary["StarportStorage"].Exits.Add(new Exit()
-            //{
-            //    Name = "StarportTerminal",
-            //    Description = "A rusty metal door leading back to the terminal hall, that somehow sounds as silent as this storage room.",
-            //    Destination = _locationsDictionary["StarportTerminal"]
-            //});
         }
-
-        //public Location GetLocation(string locationKey)
-        //{
-        //    if (_locationsDictionary.TryGetValue(locationKey, out var location))
-        //    {
-        //        return location;
-        //    }
-        //    throw new KeyNotFoundException($"Location '{locationKey}' not found.");
-        //}
     }
 }

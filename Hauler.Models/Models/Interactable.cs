@@ -11,6 +11,8 @@ namespace Haul.Contracts.Models
     {
         public bool IsActive { get; set; } = false;
 
+        public Dictionary<string, Inventory> Commodities { get; set; } = new();
+
         public void Disengage()
         {
             IsActive = false;
@@ -20,5 +22,7 @@ namespace Haul.Contracts.Models
         {
             IsActive = true;
         }
+
+
     }
 }

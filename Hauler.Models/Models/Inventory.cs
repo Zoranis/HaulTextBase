@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Haul.Contracts.Models
 {
-    public class CargoLoad
+    public class Inventory
     {
         public Commodity Commodity { get; set; }
         public int Quantity { get; set; }
