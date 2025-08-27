@@ -1,6 +1,7 @@
 ﻿using Haul.Contracts.Interfaces;
 using Haul.Engine.API;
 using Haul.Engine.Game.Initializers;
+using Haul.Engine.Services;
 using Haul.Persistence;
 using HaulTextBase.Game;
 
@@ -16,6 +17,7 @@ namespace Haul.Engine.Game
             //GameInitializer gameInitializer = new GameInitializer();
             //CurrentGameState = GameInitializer.InitializeGamestate();
             CurrentGameState = new GameInitializer().InitializeGamestate();
+            ResponseBuilder.BuildResponse(CurrentGameState);
             return new Response(CurrentGameState);
         }
 
@@ -24,6 +26,7 @@ namespace Haul.Engine.Game
             // Process the request and update the game state
             CurrentGameState.Choices[request.Choice]?.Action.Invoke();
             CurrentGameState.ClearChoices();
+            ResponseBuilder.BuildResponse(CurrentGameState);
             return new Response(CurrentGameState);
         }
 

@@ -7,7 +7,7 @@ namespace Haul.Contracts.Models
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public Dictionary<string, Interactable>? Interactables { get; set; } = new Dictionary<string, Interactable>();
+        public Dictionary<string, Store> Stores { get; set; } = new Dictionary<string, Store>();
         public List<string>? ItemKeys { get; set; }
         public List<Exit> Exits { get; set; } = new List<Exit>();
 

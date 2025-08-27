@@ -15,10 +15,18 @@ namespace Haul.Engine.Game.Initializers
         {
             var locations = gameState.Locations;
 
-            locations["StarportTerminal"].Interactables.Add(
-            new Interactable()
+            locations["StarportTerminal"].Stores.Add("TrashStore", new()
             {
-                
+                IsEngaged = false,
+                StoreInventory = new Dictionary<string, Inventory>
+                {
+                    { 
+                      Commodity.ScrapMetal.Name,
+                      Commodity.ScrapMetal.CreateInventory(15)
+                    },
+
+                },
+
             });
         }
     }
