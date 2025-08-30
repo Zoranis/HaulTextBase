@@ -9,34 +9,8 @@ namespace Haul.Contracts.Models
 {
     public class Store : IInteractable
     {
-        public bool IsEngaged { get; set; } = false;
-
-        public Dictionary<string, Inventory> StoreInventory { get; set; } = new();
-
-        public List<string> AcceptedCommodities { get; set; } = new();
-        
-        public bool IsBuyingCommodity(string commodityName)
-        {
-            return AcceptedCommodities.Contains(commodityName);
-        }
-
-        public bool RemoveInventory(Inventory removeInventory)
-        {
-            if (!Has(removeInventory))
-                return false;
-
-            StoreInventory[removeInventory.Commodity.Name].Quantity -= removeInventory.Quantity;
-            return true;
-        }
-
-        public bool Has(Inventory checkInventory)
-        {
-            if (StoreInventory.TryGetValue(checkInventory.Commodity.Name, out var inv))
-            {
-                return inv.Quantity >= checkInventory.Quantity;
-            }
-            return false;
-        }
+        public bool IsEngaged { get; private set; }
+        public Inventory StoreInventory { get; set; } = new();
 
         public void Disengage()
         {

@@ -18,11 +18,11 @@ namespace Haul.Engine.Game.Initializers
             locations["StarportTerminal"].Stores.Add("TrashStore", new()
             {
                 IsEngaged = false,
-                StoreInventory = new Dictionary<string, Inventory>
+                StoreInventory = new Dictionary<string, InventoryEntry>
                 {
                     { 
                       Commodity.ScrapMetal.Name,
-                      Commodity.ScrapMetal.CreateInventory(15)
+                      Commodity.ScrapMetal.CreateInventoryEntry(15)
                     },
 
                 },

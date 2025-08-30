@@ -12,9 +12,9 @@ namespace Haul.Contracts.Models
         public string Description { get; set; } = string.Empty;
         public decimal BasePrice { get; set; }
 
-        public Inventory CreateInventory(int quantity)
+        public InventoryEntry CreateInventoryEntry(int quantity)
         {
-            return new Inventory
+            return new InventoryEntry
             {
                 Commodity = this,
                 Quantity = quantity

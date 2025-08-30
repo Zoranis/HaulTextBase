@@ -8,8 +8,20 @@ namespace Haul.Contracts.Models
 {
     public class Inventory
     {
-        public Commodity Commodity { get; set; }
-        public int Quantity { get; set; }
+        private Dictionary<string, InventoryEntry> InventoryDictionary { get; set; } = new Dictionary<string, InventoryEntry>();
+
+        public void AppendInventoryEntry(InventoryEntry appendingEntry)
+        {
+            if (InventoryDictionary.TryGetValue(appendingEntry.Commodity.Name, out var targetInventoryEntry))
+            {
+                targetInventoryEntry.Quantity += appendingEntry.Quantity;
+            }
+            else
+            {
+                InventoryDictionary[appendingEntry.Commodity.Name] = appendingEntry;
+            }
+        }
+
 
     }
 }

@@ -14,5 +14,6 @@ namespace Haul.Engine.Game
 
         public Vehicle? Vehicle { get; set; }
 
+        
     }
 }

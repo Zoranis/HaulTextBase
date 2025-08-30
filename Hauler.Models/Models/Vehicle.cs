@@ -9,7 +9,7 @@
         public int MaxFuel { get; set; } = 100;
         public int CargoCapacity { get; set; } = 10;
 
-        public List<Inventory> Cargo { get; set; } = new List<Inventory>();
+        public List<InventoryEntry> Cargo { get; set; } = new List<InventoryEntry>();
 
 
         public int GetAvailableCargoSpace()

@@ -1,5 +1,6 @@
 ﻿using Haul.Contracts.Models;
 using Haul.Engine.API;
+using Haul.Engine.Game;
 using HaulTextBase.Game;
 
 namespace Haul.Engine.Services
@@ -13,6 +14,7 @@ namespace Haul.Engine.Services
         {
             ChoiceIndex = 0;
             BuildExitChoices(gameState);
+            BuildStoreChoices(gameState);
         }
 
 
@@ -46,7 +48,6 @@ namespace Haul.Engine.Services
                     {
                         Action = () =>
                         {
-                            // Implement store interaction logic here
                         },
                         Description = $"Buy {item.Key} - {item.Value.Quantity} available"
                     });
