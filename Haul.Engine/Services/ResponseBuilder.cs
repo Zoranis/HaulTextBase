@@ -40,12 +40,14 @@ namespace Haul.Engine.Services
 
         private static void BuildStoreChoices(GameState gameState)
         {
-            foreach (var currentStore in gameState.CurrentLocation.Stores)
+            foreach (var currentStoreDictionaryItem in gameState.CurrentLocation.Stores)
             {
-                if (!currentStore.Value.IsEngaged)
+                Store currentStore = currentStoreDictionaryItem.Value;
+
+                if (!currentStore.IsEngaged)
                     continue;
 
-                foreach (var item in currentStore.Value.StoreInventory)
+                foreach (var item in currentStore.StoreInventory.GetAllEntries())
                 {
                     gameState.Choices.Add(ChoiceIndex++, new Choice()
                     {

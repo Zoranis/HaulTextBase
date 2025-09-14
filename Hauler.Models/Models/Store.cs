@@ -9,7 +9,7 @@ namespace Haul.Contracts.Models
 {
     public class Store : IInteractable
     {
-        public bool IsEngaged { get; private set; }
+        public bool IsEngaged { get; set; }
         public Inventory StoreInventory { get; set; } = new();
 
         public void Disengage()

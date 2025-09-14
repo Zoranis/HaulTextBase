@@ -22,6 +22,10 @@ namespace Haul.Contracts.Models
             }
         }
 
+        public List<InventoryEntry> GetAllEntries()
+        {
+            return InventoryDictionary.Values.ToList();
+        }
 
     }
 }
