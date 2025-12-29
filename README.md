@@ -34,8 +34,7 @@ A class library containing the core game logic and models.
 
 ## Technologies Used
 
-- **.NET 8.0** - Target framework
-- **C# 12** - Programming language
+- **.NET 8.0** - Target framework (uses C# 12 by default)
 - **Spectre.Console** (v0.50.0) - Rich console UI library
 - **Microsoft.Extensions.DependencyInjection** (v9.0.7) - Dependency injection framework
 
